@@ -1,0 +1,16 @@
+yamaha 32 bit
+power 1EE133CC
+v_up 1EE17887
+v_down 1EE1F807
+mute 1EE139C6
+sub_up 1EE132CD
+sub_down 1EE1F807
+stereo 1EE10AF5
+movie 1EE19B64
+c_voice 1EE13AC5
+dvd 1EE152AD
+
+Pana 48 bit
+power 4004:100BCBD
+vol_down  4004:1008485
+vol_up 4004:1000405
