@@ -5,18 +5,21 @@ import serial
 
 port = "/dev/uarduino"
 
-cmd_on = [
+commands = { 
+'on': [
     "1EE133CC",  #Spk on
     "4004:100BCBD", #TV on 
     "1EE152AD",  #BD src
     "1EE19B64",  #Movie
-    "1EE13AC5" ] #Clear Voice
-
-cmd_off = [
+    "1EE13AC5" ], #Clear Voice
+'off': [
     "4004:100BCBD", #TV off 
     "1EE10AF5",  #Stereo
     "1EE13AC5",  #Clear Voice
-    "1EE133CC",] #Spk off
+    "1EE133CC"], #Spk off
+'volup': ["1EE17887"],
+'voldown': ["1EE1F807"]
+}
 
 ser = serial.Serial(
     port=port,\
@@ -43,13 +46,7 @@ def action(commands):
         time.sleep(0.5)
 
 act = sys.argv[1].lower()
-
-if act == 'on':
-    action(cmd_on)
-elif act == 'off':
-    action(cmd_off)
-else:
-    print("Unknown option: "+act)
+action(commands[act])
 
 ser.close()
 
