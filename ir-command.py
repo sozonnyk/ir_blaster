@@ -5,18 +5,26 @@ import serial
 
 port = "/dev/uarduino"
 
-commands = { 
+#TV off: 4004:100FCFD
+#TV on 4004:1007C7D
+#Spkr Off: 1EE1FE01
+#Spkr on: 1EE17E81
+#Clear voice off: 7E8141BE
+#Clear voice on: 7E8101FE
+#BT src: 1EE1946B
+
+commands={
 'on': [
-    "1EE133CC",  #Spk on
-    "4004:100BCBD", #TV on 
-    "1EE152AD",  #BD src
-    "1EE19B64",  #Movie
-    "1EE13AC5" ], #Clear Voice
+    "1EE17E81", #Spk on
+    "4004:1007C7D", #TV on
+    "1EE152AD", #BDsrc
+    "1EE19B64", #Movie
+    "7E8101FE" ], #Clear Voice on
 'off': [
-    "4004:100BCBD", #TV off 
-    "1EE10AF5",  #Stereo
-    "1EE13AC5",  #Clear Voice
-    "1EE133CC"], #Spk off
+    "4004:100FCFD", #TV off
+    "1EE10AF5", #Stereo
+    "7E8141BE", #Clear Voice off
+    "1EE1FE01" ], #Spk off
 'volup': ["1EE17887"],
 'voldown': ["1EE1F807"]
 }
