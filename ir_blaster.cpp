@@ -4,9 +4,11 @@
 
 IRsend irsend;
 
-//TX pin = Atmega328 - 3, Atmega32u4 - 5
-//For Atmega32u4 changes required in IRremoteInt.h: Enable IR_USE_TIMER3 and add TIMER_PWM_PIN 5
-
+// TX pin = Atmega328 - 3, Atmega32u4 - 5
+// For Atmega32u4 changes required in IRremoteInt.h: Enable IR_USE_TIMER3 and add TIMER_PWM_PIN 5
+// Also change USBCore.cpp SendDescriptor(USBSetup& setup), line 531
+//			char name[ISERIAL_MAX_LEN] = "ir-blaster";
+//			//PluggableUSB().getShortName(name);
 
 int PAUSE = 10;
 int NEC_BITS = 32;
